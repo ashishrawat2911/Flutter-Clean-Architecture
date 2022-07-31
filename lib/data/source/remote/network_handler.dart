@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:popular_movies/data/network_error.dart';
+import 'package:popular_movies/core/network_error.dart';
 import 'package:popular_movies/data/source/remote/error_model.dart';
 
 NetworkError getNetworkError(dynamic error) {

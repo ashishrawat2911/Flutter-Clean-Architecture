@@ -1,3 +1,5 @@
+import 'package:popular_movies/res/constants.dart';
+
 class Movie {
   int id;
   String posterPath;
@@ -19,4 +21,8 @@ class Movie {
   String toString() {
     return 'Movie{id: $id, posterPath: $posterPath, backdropPath: $backdropPath, title: $title, voteAverage: $voteAverage, overview: $overview}';
   }
+}
+
+extension MovieDbImage on String {
+  String get getMovieDBImage => Constants.movieImagePath + this;
 }

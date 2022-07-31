@@ -64,7 +64,7 @@ class MoviesScreen extends StatelessWidget {
           child: Column(
             children: [
               CachedNetworkImage(
-                imageUrl: "${Constants.movieImagePath}${item.posterPath}",
+                imageUrl: item.posterPath.getMovieDBImage,
               ),
               const SizedBox(
                 height: 10,

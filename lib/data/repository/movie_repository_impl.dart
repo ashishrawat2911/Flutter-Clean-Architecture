@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:popular_movies/data/network_error.dart';
+import 'package:popular_movies/core/network_error.dart';
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
 import 'package:popular_movies/data/source/remote/network_handler.dart';

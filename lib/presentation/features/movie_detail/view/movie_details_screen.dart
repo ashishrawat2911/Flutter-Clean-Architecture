@@ -4,7 +4,6 @@ import 'package:popular_movies/domain/model/movie.dart';
 import 'package:popular_movies/presentation/features/movie_detail/state/movie_details_state.dart';
 import 'package:popular_movies/presentation/features/movie_detail/view_model/movie_details_view_model.dart';
 import 'package:popular_movies/presentation/view/base_view.dart';
-import 'package:popular_movies/res/constants.dart';
 
 class MoviesDetailScreen extends StatelessWidget {
   final int id;
@@ -43,7 +42,7 @@ class MoviesDetailScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CachedNetworkImage(
-          imageUrl: "${Constants.movieImagePath}${movie.backdropPath}",
+          imageUrl: movie.backdropPath.getMovieDBImage,
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),

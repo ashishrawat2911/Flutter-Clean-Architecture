@@ -1,4 +1,4 @@
-import 'package:popular_movies/data/network_error.dart';
+import 'package:popular_movies/core/network_error.dart';
 
 class ErrorModel {
   NetworkError getNetworkError(Map<String, dynamic> json) {
