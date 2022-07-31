@@ -19,6 +19,7 @@ dependencies:
   floor:
   retrofit:
   freezed:
+  cached_network_image:
 
 dev_dependencies:
   flutter_test:

@@ -27,15 +27,19 @@ class MoviesScreen extends StatelessWidget {
   }
 
   Widget handleMoviesUi(MoviesResultState moviesResultState) {
-    return moviesResultState.when(loading: () {
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
-    }, result: (r) {
-      return movies(r);
-    }, error: (error) {
-      return Center(child: Text(error.errorMessage));
-    });
+    return moviesResultState.when(
+      loading: () {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+      result: (r) {
+        return movies(r);
+      },
+      error: (error) {
+        return Center(child: Text(error.errorMessage));
+      },
+    );
   }
 
   Widget movies(List<Movie> movies) {
