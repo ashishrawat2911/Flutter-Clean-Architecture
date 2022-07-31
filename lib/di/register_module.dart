@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/data/source/local/movie_dao.dart';
@@ -13,4 +14,6 @@ abstract class RegisterModule {
   }
 
   Dio get dio => Dio();
+
+  Connectivity get connectivity => Connectivity();
 }

@@ -20,6 +20,7 @@ dependencies:
   retrofit:
   freezed:
   cached_network_image:
+  connectivity_plus:
 
 dev_dependencies:
   flutter_test:

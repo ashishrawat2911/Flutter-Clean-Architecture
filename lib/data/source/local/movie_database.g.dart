@@ -146,12 +146,13 @@ class _$MovieDao extends MovieDao {
 
   @override
   Future<void> insertMovie(MovieEntity movie) async {
-    await _movieEntityInsertionAdapter.insert(movie, OnConflictStrategy.abort);
+    await _movieEntityInsertionAdapter.insert(
+        movie, OnConflictStrategy.replace);
   }
 
   @override
   Future<void> insertMovies(List<MovieEntity> movie) async {
     await _movieEntityInsertionAdapter.insertList(
-        movie, OnConflictStrategy.abort);
+        movie, OnConflictStrategy.replace);
   }
 }

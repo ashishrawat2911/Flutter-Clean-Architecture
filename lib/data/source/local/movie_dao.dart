@@ -9,9 +9,9 @@ abstract class MovieDao {
   @Query('SELECT * FROM MovieEntity WHERE id = :id')
   Future<MovieEntity?> findMovieById(int id);
 
-  @insert
+  @Insert(onConflict: OnConflictStrategy.replace)
   Future<void> insertMovie(MovieEntity movie);
 
-  @insert
+  @Insert(onConflict: OnConflictStrategy.replace)
   Future<void> insertMovies(List<MovieEntity> movie);
 }
