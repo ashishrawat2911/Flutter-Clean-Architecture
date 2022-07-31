@@ -8,31 +8,29 @@ import 'package:injectable/injectable.dart';
 class ConnectivityService {
   final Connectivity _connectivity;
 
-  ConnectivityService(this._connectivity) {
-    checkInternetConnection();
+  ConnectivityService(this._connectivity);
+
+  Stream<bool> get onConnectionChange =>
+      _connectivity.onConnectivityChanged.map((event) => _isConnectedToInternet(event));
+
+  bool _isConnectedToInternet(ConnectivityResult event) {
+    return event == ConnectivityResult.mobile ||
+        event == ConnectivityResult.ethernet ||
+        event == ConnectivityResult.mobile;
   }
 
-  bool _hasConnection = false;
-  ConnectivityResult? connectionMedium;
-  StreamController<bool> connectionChangeController = StreamController.broadcast();
-
-  Stream<bool> get connectionChange => connectionChangeController.stream;
-
   Future<bool> checkInternetConnection() async {
-    bool previousConnection = _hasConnection;
+    bool hasConnection = false;
     try {
       final result = await InternetAddress.lookup('google.com');
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-        _hasConnection = true;
+        hasConnection = true;
       } else {
-        _hasConnection = false;
+        hasConnection = false;
       }
     } on SocketException catch (_) {
-      _hasConnection = false;
+      hasConnection = false;
     }
-    if (previousConnection != _hasConnection) {
-      connectionChangeController.add(_hasConnection);
-    }
-    return _hasConnection;
+    return hasConnection;
   }
 }
