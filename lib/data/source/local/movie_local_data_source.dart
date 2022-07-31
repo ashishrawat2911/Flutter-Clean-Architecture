@@ -10,7 +10,7 @@ import '../../mapper/movie_to_movie_entity_mapper.dart';
 class MovieLocalDataSourceImpl extends MovieLocalDataSource {
   final MovieDao _movieDao;
   final MovieEntityToMovieMapper _movieEntityToMovieMapper;
-  MovieToMovieEntityMapper _movieToMovieEntityMapper;
+  final MovieToMovieEntityMapper _movieToMovieEntityMapper;
 
   MovieLocalDataSourceImpl(this._movieDao, this._movieEntityToMovieMapper,this._movieToMovieEntityMapper);
 

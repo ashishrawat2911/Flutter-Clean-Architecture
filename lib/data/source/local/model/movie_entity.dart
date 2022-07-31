@@ -1,4 +1,3 @@
-// entity/person.dart
 
 import 'package:floor/floor.dart';
 
