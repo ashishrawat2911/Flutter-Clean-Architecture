@@ -12,7 +12,7 @@ class MovieLocalDataSourceImpl extends MovieLocalDataSource {
   final MovieEntityToMovieMapper _movieEntityToMovieMapper;
   final MovieToMovieEntityMapper _movieToMovieEntityMapper;
 
-  MovieLocalDataSourceImpl(this._movieDao, this._movieEntityToMovieMapper,this._movieToMovieEntityMapper);
+  MovieLocalDataSourceImpl(this._movieDao, this._movieEntityToMovieMapper, this._movieToMovieEntityMapper);
 
   @override
   Future<List<Movie>> getMovies() async {

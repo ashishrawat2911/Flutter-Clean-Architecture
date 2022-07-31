@@ -8,6 +8,7 @@ import 'package:popular_movies/res/constants.dart';
 
 class MoviesDetailScreen extends StatelessWidget {
   final int id;
+
   const MoviesDetailScreen(this.id, {Key? key}) : super(key: key);
 
   @override
@@ -52,7 +53,7 @@ class MoviesDetailScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Text(movie.title,style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(movie.title, style: const TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(
                 height: 10,
               ),

@@ -12,7 +12,7 @@ class MoviesViewModel extends Cubit<MoviesState> {
   void getMovies() async {
     final result = await _getMoviesUseCase.execute();
     result.fold((l) {
-     emit( state.copyWith(moviesResultState: MoviesResultState.error(l)));
+      emit(state.copyWith(moviesResultState: MoviesResultState.error(l)));
     }, (r) {
       emit(state.copyWith(moviesResultState: MoviesResultState.result(r)));
     });
