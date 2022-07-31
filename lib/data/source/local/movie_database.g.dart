@@ -121,7 +121,7 @@ class _$MovieDao extends MovieDao {
 
   @override
   Future<List<MovieEntity>> findAllMovies() async {
-    return _queryAdapter.queryList('SELECT * FROM Movie',
+    return _queryAdapter.queryList('SELECT * FROM MovieEntity',
         mapper: (Map<String, Object?> row) => MovieEntity(
             row['id'] as int,
             row['posterPath'] as String,
@@ -133,7 +133,7 @@ class _$MovieDao extends MovieDao {
 
   @override
   Future<MovieEntity?> findMovieById(int id) async {
-    return _queryAdapter.query('SELECT * FROM Movie WHERE id = ?1',
+    return _queryAdapter.query('SELECT * FROM MovieEntity WHERE id = ?1',
         mapper: (Map<String, Object?> row) => MovieEntity(
             row['id'] as int,
             row['posterPath'] as String,
@@ -147,5 +147,11 @@ class _$MovieDao extends MovieDao {
   @override
   Future<void> insertMovie(MovieEntity movie) async {
     await _movieEntityInsertionAdapter.insert(movie, OnConflictStrategy.abort);
+  }
+
+  @override
+  Future<void> insertMovies(List<MovieEntity> movie) async {
+    await _movieEntityInsertionAdapter.insertList(
+        movie, OnConflictStrategy.abort);
   }
 }

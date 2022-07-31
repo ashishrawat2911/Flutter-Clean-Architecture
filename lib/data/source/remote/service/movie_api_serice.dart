@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/res/constants.dart';
 import 'package:retrofit/retrofit.dart';
@@ -13,6 +14,15 @@ part 'movie_api_serice.g.dart';
 abstract class MovieApiService {
   @factoryMethod
   factory MovieApiService(Dio _dio) {
+    if (kDebugMode) {
+      _dio.interceptors.add(LogInterceptor(
+          responseBody: true,
+          error: true,
+          requestHeader: true,
+          responseHeader: false,
+          request: true,
+          requestBody: true));
+    }
     _dio
       ..httpClientAdapter
       ..options.queryParameters = {

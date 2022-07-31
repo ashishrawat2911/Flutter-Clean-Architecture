@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:popular_movies/presentation/features/movies/view/movies_screen.dart';
 import 'package:popular_movies/presentation/route/route_data.dart';
 import 'package:popular_movies/presentation/route/routes.dart';
 
@@ -13,7 +14,7 @@ class NavigationHandler {
     final name = settings.name;
     final arguments = settings.arguments;
     if (name == initialRoute) {
-      return _getRoute(SplashRoute());
+      return _getRoute(MoviesRoute());
     }
     if (arguments is RouteData) {
       return _getRoute(arguments);

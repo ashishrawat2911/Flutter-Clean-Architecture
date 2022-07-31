@@ -7,6 +7,7 @@ part 'movie_details_state.freezed.dart';
 @freezed
 class MovieDetailState with _$MovieDetailState {
   const factory MovieDetailState({
+    @Default("") String title,
     @Default(MovieDetailResultState.loading()) MovieDetailResultState movieDetailResultState,
   }) = _MovieDetailState;
 }

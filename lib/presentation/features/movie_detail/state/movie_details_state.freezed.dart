@@ -18,9 +18,11 @@ class _$MovieDetailStateTearOff {
   const _$MovieDetailStateTearOff();
 
   _MovieDetailState call(
-      {MovieDetailResultState movieDetailResultState =
+      {String title = "",
+      MovieDetailResultState movieDetailResultState =
           const MovieDetailResultState.loading()}) {
     return _MovieDetailState(
+      title: title,
       movieDetailResultState: movieDetailResultState,
     );
   }
@@ -31,6 +33,7 @@ const $MovieDetailState = _$MovieDetailStateTearOff();
 
 /// @nodoc
 mixin _$MovieDetailState {
+  String get title => throw _privateConstructorUsedError;
   MovieDetailResultState get movieDetailResultState =>
       throw _privateConstructorUsedError;
 
@@ -44,7 +47,7 @@ abstract class $MovieDetailStateCopyWith<$Res> {
   factory $MovieDetailStateCopyWith(
           MovieDetailState value, $Res Function(MovieDetailState) then) =
       _$MovieDetailStateCopyWithImpl<$Res>;
-  $Res call({MovieDetailResultState movieDetailResultState});
+  $Res call({String title, MovieDetailResultState movieDetailResultState});
 
   $MovieDetailResultStateCopyWith<$Res> get movieDetailResultState;
 }
@@ -60,9 +63,14 @@ class _$MovieDetailStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? title = freezed,
     Object? movieDetailResultState = freezed,
   }) {
     return _then(_value.copyWith(
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       movieDetailResultState: movieDetailResultState == freezed
           ? _value.movieDetailResultState
           : movieDetailResultState // ignore: cast_nullable_to_non_nullable
@@ -86,7 +94,7 @@ abstract class _$MovieDetailStateCopyWith<$Res>
           _MovieDetailState value, $Res Function(_MovieDetailState) then) =
       __$MovieDetailStateCopyWithImpl<$Res>;
   @override
-  $Res call({MovieDetailResultState movieDetailResultState});
+  $Res call({String title, MovieDetailResultState movieDetailResultState});
 
   @override
   $MovieDetailResultStateCopyWith<$Res> get movieDetailResultState;
@@ -105,9 +113,14 @@ class __$MovieDetailStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? title = freezed,
     Object? movieDetailResultState = freezed,
   }) {
     return _then(_MovieDetailState(
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       movieDetailResultState: movieDetailResultState == freezed
           ? _value.movieDetailResultState
           : movieDetailResultState // ignore: cast_nullable_to_non_nullable
@@ -120,15 +133,19 @@ class __$MovieDetailStateCopyWithImpl<$Res>
 
 class _$_MovieDetailState implements _MovieDetailState {
   const _$_MovieDetailState(
-      {this.movieDetailResultState = const MovieDetailResultState.loading()});
+      {this.title = "",
+      this.movieDetailResultState = const MovieDetailResultState.loading()});
 
+  @JsonKey()
+  @override
+  final String title;
   @JsonKey()
   @override
   final MovieDetailResultState movieDetailResultState;
 
   @override
   String toString() {
-    return 'MovieDetailState(movieDetailResultState: $movieDetailResultState)';
+    return 'MovieDetailState(title: $title, movieDetailResultState: $movieDetailResultState)';
   }
 
   @override
@@ -136,13 +153,16 @@ class _$_MovieDetailState implements _MovieDetailState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _MovieDetailState &&
+            const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality()
                 .equals(other.movieDetailResultState, movieDetailResultState));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(movieDetailResultState));
+      runtimeType,
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(movieDetailResultState));
 
   @JsonKey(ignore: true)
   @override
@@ -152,8 +172,11 @@ class _$_MovieDetailState implements _MovieDetailState {
 
 abstract class _MovieDetailState implements MovieDetailState {
   const factory _MovieDetailState(
-      {MovieDetailResultState movieDetailResultState}) = _$_MovieDetailState;
+      {String title,
+      MovieDetailResultState movieDetailResultState}) = _$_MovieDetailState;
 
+  @override
+  String get title;
   @override
   MovieDetailResultState get movieDetailResultState;
   @override

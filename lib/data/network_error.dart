@@ -1,6 +1,6 @@
 class NetworkError {
   String errorMessage;
-  String status;
+  int status;
 
   NetworkError(this.errorMessage, this.status);
 

@@ -14,7 +14,10 @@ class MoviesDetailsViewModel extends Cubit<MovieDetailState> {
     result.fold((l) {
       emit(state.copyWith(movieDetailResultState: MovieDetailResultState.error(l)));
     }, (r) {
-      emit(state.copyWith(movieDetailResultState: MovieDetailResultState.result(r)));
+      emit(state.copyWith(
+        movieDetailResultState: MovieDetailResultState.result(r),
+        title: r.title,
+      ));
     });
   }
 }

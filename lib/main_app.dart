@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:popular_movies/presentation/features/movies/view/movies_screen.dart';
 import 'package:popular_movies/presentation/route/router.dart';
 
 class MainApp extends StatelessWidget {
@@ -11,7 +10,6 @@ class MainApp extends StatelessWidget {
       navigatorKey: NavigationHandler.navigatorKey,
       initialRoute: NavigationHandler.initialRoute,
       onGenerateRoute: NavigationHandler.onGenerate,
-      home: MoviesScreen(),
     );
   }
 }
