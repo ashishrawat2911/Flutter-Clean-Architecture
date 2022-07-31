@@ -18,7 +18,7 @@ import '../data/source/local/movie_local_data_source.dart' as _i10;
 import '../data/source/movie_local_data_source.dart' as _i9;
 import '../data/source/movie_remote_data_source.dart' as _i11;
 import '../data/source/remote/movie_remote_data_source.dart' as _i12;
-import '../data/source/remote/service/movie_api_serice.dart' as _i4;
+import '../data/source/remote/service/movie_api_service.dart' as _i4;
 import '../domain/repository/movie_repository.dart' as _i13;
 import '../domain/usecases/get_movie_detail_use_case.dart' as _i15;
 import '../domain/usecases/get_movies_use_case.dart' as _i17;

@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/data/mapper/movie_response_to_movie_mapper.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
-import 'package:popular_movies/data/source/remote/service/movie_api_serice.dart';
+import 'package:popular_movies/data/source/remote/service/movie_api_service.dart';
 import 'package:popular_movies/domain/model/movie.dart';
 
 @Injectable(as: MovieRemoteDataSource)

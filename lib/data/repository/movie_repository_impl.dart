@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:popular_movies/core/network_error.dart';
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
-import 'package:popular_movies/data/source/remote/network_handler.dart';
+import 'package:popular_movies/data/source/remote/network_error_handler.dart';
 import 'package:popular_movies/domain/model/movie.dart';
 import 'package:popular_movies/domain/repository/movie_repository.dart';
 

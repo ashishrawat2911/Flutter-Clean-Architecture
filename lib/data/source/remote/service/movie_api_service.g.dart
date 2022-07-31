@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'movie_api_serice.dart';
+part of 'movie_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator

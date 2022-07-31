@@ -7,7 +7,7 @@ import 'package:retrofit/retrofit.dart';
 import '../model/movie_list_response_model.dart';
 import '../model/movie_response_model.dart';
 
-part 'movie_api_serice.g.dart';
+part 'movie_api_service.g.dart';
 
 @RestApi(baseUrl: Constants.apiBaseUrl)
 @injectable
