@@ -5,7 +5,6 @@ import 'package:popular_movies/presentation/features/movie_detail/view/movie_det
 import 'package:popular_movies/presentation/features/movies/state/movie_state.dart';
 import 'package:popular_movies/presentation/features/movies/view_model/movies_view_model.dart';
 import 'package:popular_movies/presentation/view/base_view.dart';
-import 'package:popular_movies/res/constants.dart';
 
 class MoviesScreen extends StatelessWidget {
   const MoviesScreen({Key? key}) : super(key: key);

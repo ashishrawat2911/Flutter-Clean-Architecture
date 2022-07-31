@@ -18,6 +18,9 @@ class MovieRepositoryImpl extends MovieRepository {
 
   @override
   Future<Either<NetworkError, Movie>> getMovieDetail(int id) async {
+    /*
+    Fetch the movie details from the DB, if not available then get it from API
+    */
     try {
       final cacheMovie = await _movieLocalDataSource.movieDetails(id);
       if (cacheMovie == null) {
@@ -33,6 +36,9 @@ class MovieRepositoryImpl extends MovieRepository {
 
   @override
   Future<Either<NetworkError, List<Movie>>> getPopularMovies() async {
+    /*
+    Check if there is no network connection then retrieve the data from the DB.
+    */
     try {
       if (await connectivityService.checkInternetConnection()) {
         final movies = await _movieRemoteDataSource.getMovies();
