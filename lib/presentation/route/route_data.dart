@@ -1,11 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:popular_movies/presentation/route/router.dart';
 
-/*
- popUntil,
-  pushAndPopUntil,
-  dialog,
-*/
 abstract class RouteData {
   String get routeName;
 
