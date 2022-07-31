@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:popular_movies/domain/model/movie.dart';
 import 'package:popular_movies/presentation/features/movie_detail/state/movie_details_state.dart';
@@ -7,7 +8,6 @@ import 'package:popular_movies/res/constants.dart';
 
 class MoviesDetailScreen extends StatelessWidget {
   final int id;
-
   const MoviesDetailScreen(this.id, {Key? key}) : super(key: key);
 
   @override
@@ -41,7 +41,9 @@ class MoviesDetailScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image.network("${Constants.movieImagePath}${movie.backdropPath}"),
+        CachedNetworkImage(
+          imageUrl: "${Constants.movieImagePath}${movie.backdropPath}",
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

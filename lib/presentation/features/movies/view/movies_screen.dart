@@ -1,8 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:popular_movies/domain/model/movie.dart';
+import 'package:popular_movies/presentation/features/movie_detail/view/movie_details_screen.dart';
 import 'package:popular_movies/presentation/features/movies/state/movie_state.dart';
 import 'package:popular_movies/presentation/features/movies/view_model/movies_view_model.dart';
-import 'package:popular_movies/presentation/route/routes.dart';
 import 'package:popular_movies/presentation/view/base_view.dart';
 import 'package:popular_movies/res/constants.dart';
 
@@ -56,11 +57,15 @@ class MoviesScreen extends StatelessWidget {
         final item = movies[index];
         return GestureDetector(
           onTap: () {
-            MovieDetailRoute(item.id).push();
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => MoviesDetailScreen(item.id),
+            ));
           },
           child: Column(
             children: [
-              Image.network("${Constants.movieImagePath}${item.posterPath}"),
+              CachedNetworkImage(
+                imageUrl: "${Constants.movieImagePath}${item.posterPath}",
+              ),
               const SizedBox(
                 height: 10,
               ),
