@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:popular_movies/domain/model/movie.dart';
+import 'package:popular_movies/domain/model/movie_details.dart';
 import 'package:popular_movies/presentation/features/movie_detail/state/movie_details_state.dart';
 import 'package:popular_movies/presentation/features/movie_detail/view_model/movie_details_view_model.dart';
 import 'package:popular_movies/presentation/view/base_view.dart';
@@ -37,7 +38,7 @@ class MoviesDetailScreen extends StatelessWidget {
     });
   }
 
-  Widget movies(Movie movie) {
+  Widget movies(MovieDetails movie) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

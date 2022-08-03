@@ -10,7 +10,7 @@ import '../model/movie_response_model.dart';
 part 'movie_api_service.g.dart';
 
 @RestApi(baseUrl: Constants.apiBaseUrl)
-@injectable
+@singleton
 abstract class MovieApiService {
   @factoryMethod
   factory MovieApiService(Dio _dio) {

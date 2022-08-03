@@ -193,7 +193,7 @@ class _$MovieDetailResultStateTearOff {
     return const MovieDetailLoading();
   }
 
-  MovieDetailResult result(Movie movie) {
+  MovieDetailResult result(MovieDetails movie) {
     return MovieDetailResult(
       movie,
     );
@@ -214,21 +214,21 @@ mixin _$MovieDetailResultState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Movie movie) result,
+    required TResult Function(MovieDetails movie) result,
     required TResult Function(NetworkError error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
     required TResult orElse(),
   }) =>
@@ -316,7 +316,7 @@ class _$MovieDetailLoading implements MovieDetailLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Movie movie) result,
+    required TResult Function(MovieDetails movie) result,
     required TResult Function(NetworkError error) error,
   }) {
     return loading();
@@ -326,7 +326,7 @@ class _$MovieDetailLoading implements MovieDetailLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
   }) {
     return loading?.call();
@@ -336,7 +336,7 @@ class _$MovieDetailLoading implements MovieDetailLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
     required TResult orElse(),
   }) {
@@ -390,7 +390,7 @@ abstract class $MovieDetailResultCopyWith<$Res> {
   factory $MovieDetailResultCopyWith(
           MovieDetailResult value, $Res Function(MovieDetailResult) then) =
       _$MovieDetailResultCopyWithImpl<$Res>;
-  $Res call({Movie movie});
+  $Res call({MovieDetails movie});
 }
 
 /// @nodoc
@@ -412,7 +412,7 @@ class _$MovieDetailResultCopyWithImpl<$Res>
       movie == freezed
           ? _value.movie
           : movie // ignore: cast_nullable_to_non_nullable
-              as Movie,
+              as MovieDetails,
     ));
   }
 }
@@ -423,7 +423,7 @@ class _$MovieDetailResult implements MovieDetailResult {
   const _$MovieDetailResult(this.movie);
 
   @override
-  final Movie movie;
+  final MovieDetails movie;
 
   @override
   String toString() {
@@ -451,7 +451,7 @@ class _$MovieDetailResult implements MovieDetailResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Movie movie) result,
+    required TResult Function(MovieDetails movie) result,
     required TResult Function(NetworkError error) error,
   }) {
     return result(movie);
@@ -461,7 +461,7 @@ class _$MovieDetailResult implements MovieDetailResult {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
   }) {
     return result?.call(movie);
@@ -471,7 +471,7 @@ class _$MovieDetailResult implements MovieDetailResult {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
     required TResult orElse(),
   }) {
@@ -517,9 +517,9 @@ class _$MovieDetailResult implements MovieDetailResult {
 }
 
 abstract class MovieDetailResult implements MovieDetailResultState {
-  const factory MovieDetailResult(Movie movie) = _$MovieDetailResult;
+  const factory MovieDetailResult(MovieDetails movie) = _$MovieDetailResult;
 
-  Movie get movie;
+  MovieDetails get movie;
   @JsonKey(ignore: true)
   $MovieDetailResultCopyWith<MovieDetailResult> get copyWith =>
       throw _privateConstructorUsedError;
@@ -591,7 +591,7 @@ class _$MovieDetailError implements MovieDetailError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(Movie movie) result,
+    required TResult Function(MovieDetails movie) result,
     required TResult Function(NetworkError error) error,
   }) {
     return error(this.error);
@@ -601,7 +601,7 @@ class _$MovieDetailError implements MovieDetailError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
   }) {
     return error?.call(this.error);
@@ -611,7 +611,7 @@ class _$MovieDetailError implements MovieDetailError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(Movie movie)? result,
+    TResult Function(MovieDetails movie)? result,
     TResult Function(NetworkError error)? error,
     required TResult orElse(),
   }) {

@@ -1,34 +1,26 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/core/network_error.dart';
-import 'package:popular_movies/core/services/connectivity_service.dart';
-import 'package:popular_movies/data/source/movie_local_data_source.dart';
-import 'package:popular_movies/data/source/movie_remote_data_source.dart';
+import 'package:popular_movies/data/source/movie_data_store_factory.dart';
 import 'package:popular_movies/data/source/remote/network_error_handler.dart';
 import 'package:popular_movies/domain/model/movie.dart';
+import 'package:popular_movies/domain/model/movie_details.dart';
 import 'package:popular_movies/domain/repository/movie_repository.dart';
 
 @Injectable(as: MovieRepository)
 class MovieRepositoryImpl extends MovieRepository {
-  final MovieLocalDataSource _movieLocalDataSource;
-  final MovieRemoteDataSource _movieRemoteDataSource;
-  final ConnectivityService connectivityService;
+  final MovieDataStoreFactory _movieDataStoreFactory;
 
-  MovieRepositoryImpl(this._movieLocalDataSource, this._movieRemoteDataSource, this.connectivityService);
+  MovieRepositoryImpl(this._movieDataStoreFactory);
 
   @override
-  Future<Either<NetworkError, Movie>> getMovieDetail(int id) async {
+  Future<Either<NetworkError, MovieDetails>> getMovieDetail(int id) async {
     /*
     Fetch the movie details from the DB, if not available then get it from API
     */
     try {
-      final cacheMovie = await _movieLocalDataSource.movieDetails(id);
-      if (cacheMovie == null) {
-        final movie = await _movieRemoteDataSource.getMovieDetails(id);
-        return Right(movie);
-      } else {
-        return Right(cacheMovie);
-      }
+      final movie = await _movieDataStoreFactory.getMovieDetails(id);
+      return Right(movie);
     } catch (e) {
       return Left(getNetworkError(e));
     }
@@ -40,14 +32,8 @@ class MovieRepositoryImpl extends MovieRepository {
     Check if there is no network connection then retrieve the data from the DB.
     */
     try {
-      if (await connectivityService.checkInternetConnection()) {
-        final movies = await _movieRemoteDataSource.getMovies();
-        _movieLocalDataSource.saveMovies(movies);
-        return Right(movies);
-      } else {
-        final cacheMovies = await _movieLocalDataSource.getMovies();
-        return Right(cacheMovies);
-      }
+      final movies = await _movieDataStoreFactory.getMovies();
+      return Right(movies);
     } catch (e) {
       return Left(getNetworkError(e));
     }

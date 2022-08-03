@@ -8,12 +8,15 @@ import 'package:popular_movies/res/constants.dart';
 @module
 abstract class RegisterModule {
   @preResolve
+  @singleton
   Future<MovieDao> get movieDao async {
     final db = await $FloorMovieDatabase.databaseBuilder(Constants.dbName).build();
     return db.movieDao;
   }
 
+  @singleton
   Dio get dio => Dio();
 
+  @singleton
   Connectivity get connectivity => Connectivity();
 }
