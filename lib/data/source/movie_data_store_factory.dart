@@ -34,6 +34,9 @@ class MovieDataStoreFactory {
   );
 
   Future<MovieDetails> getMovieDetails(int id) async {
+    /*
+    Fetch the movie details from the DB, if not available then get it from API
+    */
     final cacheMovie = await _movieLocalDataSource.movieDetails(id);
     if (cacheMovie == null) {
       final movie = await _movieRemoteDataSource.getMovieDetails(id);
@@ -44,6 +47,9 @@ class MovieDataStoreFactory {
   }
 
   Future<List<Movie>> getMovies() async {
+    /*
+    Check if there is no network connection then retrieve the data from the DB.
+    */
     if (await connectivityService.checkInternetConnection()) {
       final movies = await _movieRemoteDataSource.getMovies();
       _movieLocalDataSource.saveMovies(movies.map((e) => _movieResponseToMovieEntityMapper.fromModel(e)).toList());

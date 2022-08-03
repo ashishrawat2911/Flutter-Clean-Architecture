@@ -1,7 +1,12 @@
-import 'package:popular_movies/core/network_error.dart';
+import 'package:json_annotation/json_annotation.dart';
 
+part 'error_model.g.dart';
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class ErrorModel {
-  NetworkError getNetworkError(Map<String, dynamic> json) {
-    return NetworkError(json['status_message'] ?? '', json['status_code'] ?? '');
-  }
+  String statusMessage;
+  String statusCode;
+
+  ErrorModel(this.statusMessage, this.statusCode);
+  factory ErrorModel.fromJson(json)=>_$ErrorModelFromJson(json);
 }

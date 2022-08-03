@@ -10,32 +10,27 @@ import 'package:popular_movies/domain/repository/movie_repository.dart';
 @Injectable(as: MovieRepository)
 class MovieRepositoryImpl extends MovieRepository {
   final MovieDataStoreFactory _movieDataStoreFactory;
+  final NetworkErrorHandler _networkErrorHandler;
 
-  MovieRepositoryImpl(this._movieDataStoreFactory);
+  MovieRepositoryImpl(this._movieDataStoreFactory, this._networkErrorHandler);
 
   @override
   Future<Either<NetworkError, MovieDetails>> getMovieDetail(int id) async {
-    /*
-    Fetch the movie details from the DB, if not available then get it from API
-    */
     try {
       final movie = await _movieDataStoreFactory.getMovieDetails(id);
       return Right(movie);
     } catch (e) {
-      return Left(getNetworkError(e));
+      return Left(_networkErrorHandler.getNetworkError(e));
     }
   }
 
   @override
   Future<Either<NetworkError, List<Movie>>> getPopularMovies() async {
-    /*
-    Check if there is no network connection then retrieve the data from the DB.
-    */
     try {
       final movies = await _movieDataStoreFactory.getMovies();
       return Right(movies);
     } catch (e) {
-      return Left(getNetworkError(e));
+      return Left(_networkErrorHandler.getNetworkError(e));
     }
   }
 }
