@@ -1,6 +1,5 @@
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/data/source/remote/model/movie_response_model.dart';
-import 'package:popular_movies/domain/model/movie.dart';
 import 'package:popular_movies/domain/model/movie_details.dart';
 import 'package:smartstruct/smartstruct.dart';
 

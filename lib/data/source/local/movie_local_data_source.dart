@@ -10,7 +10,6 @@ class MovieLocalDataSourceImpl extends MovieLocalDataSource {
 
   MovieLocalDataSourceImpl(
     this._movieDao,
-
   );
 
   @override

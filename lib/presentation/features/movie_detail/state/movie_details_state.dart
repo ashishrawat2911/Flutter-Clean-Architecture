@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:popular_movies/core/network_error.dart';
-import 'package:popular_movies/domain/model/movie.dart';
 
 import '../../../../domain/model/movie_details.dart';
 

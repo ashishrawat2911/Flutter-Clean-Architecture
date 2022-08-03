@@ -12,8 +12,7 @@ class MovieEntityToMovieMapperImpl extends MovieEntityToMovieMapper {
 
   @override
   Movie fromModel(MovieEntity model) {
-    final movie = Movie(model.id, model.posterPath, model.title,
-        model.voteAverage, model.overview);
+    final movie = Movie(model.id, model.posterPath, model.title, model.voteAverage, model.overview);
     return movie;
   }
 }
