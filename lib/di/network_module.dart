@@ -31,9 +31,12 @@ abstract class NetworkModule {
 
   @singleton
   MovieApiService get movieApiService {
-    dio.options.queryParameters = {
-      Constants.apiKeyName: apiKey,
-    };
-    return MovieApiService(dio, Constants.apiBaseUrl);
+    return MovieApiService(
+      dio
+        ..options.queryParameters = {
+          Constants.apiKeyName: apiKey,
+        },
+      Constants.apiBaseUrl,
+    );
   }
 }

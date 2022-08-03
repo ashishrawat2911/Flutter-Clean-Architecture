@@ -5,7 +5,7 @@ part 'error_model.g.dart';
 @JsonSerializable(fieldRename: FieldRename.snake)
 class ErrorModel {
   String statusMessage;
-  String statusCode;
+  int statusCode;
 
   ErrorModel(this.statusMessage, this.statusCode);
   factory ErrorModel.fromJson(json)=>_$ErrorModelFromJson(json);
