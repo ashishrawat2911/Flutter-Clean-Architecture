@@ -20,21 +20,3 @@ abstract class MovieMapper {
 
   Movie movieResponseToMovie(MovieResponseModel model);
 }
-
-class A {
-  String a;
-
-  A(this.a);
-
-  factory A.to(String a) {
-    return A(a + a + a + a);
-  }
-
-  A.too(this.a);
-}
-
-qq() {
-  A a = A("a");
-  A aa = A.to("a");
-  A too = A.too("a");
-}
