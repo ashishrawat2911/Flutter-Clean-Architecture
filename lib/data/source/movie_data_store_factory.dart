@@ -42,10 +42,10 @@ class MovieDataStoreFactory {
     if (await connectivityService.checkInternetConnection()) {
       final movies = await _movieRemoteDataSource.getMovies();
       _movieLocalDataSource.saveMovies(movies.map((e) => _movieMapper.movieResponseToMovieEntity(e)).toList());
-      return movies.maptoList((e) => _movieMapper.movieResponseToMovie(e));
+      return movies.mapToList((e) => _movieMapper.movieResponseToMovie(e));
     } else {
       final cacheMovies = await _movieLocalDataSource.getMovies();
-      return cacheMovies.maptoList((movieEntity) => _movieMapper.movieEntityToMovie(movieEntity));
+      return cacheMovies.mapToList((movieEntity) => _movieMapper.movieEntityToMovie(movieEntity));
     }
   }
 }
