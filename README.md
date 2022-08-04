@@ -1,5 +1,5 @@
 # Flutter-Popular Movies | Clean Architecture
-[//]: # (![CI]&#40;https://github.com/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture/workflows/Ecomm/badge.svg&#41;)
+![CI](https://github.com/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture/workflows/popular_movies/badge.svg)
 [![GitHub stars](https://img.shields.io/github/stars/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture?style=social)](https://github.com/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture) 
 ![GitHub forks](https://img.shields.io/github/forks/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture?style=social)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ashishrawat2911/Flutter-PopularMovies-CleanArchitecture)
