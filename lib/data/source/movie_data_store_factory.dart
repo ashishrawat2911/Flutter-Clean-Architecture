@@ -1,10 +1,7 @@
 import 'package:injectable/injectable.dart';
+import 'package:popular_movies/core/extention/list_extentions.dart';
 import 'package:popular_movies/core/services/connectivity_service.dart';
 import 'package:popular_movies/data/mapper/movie_entity_to_movie_details_mapper.dart';
-import 'package:popular_movies/data/mapper/movie_entity_to_movie_mapper.dart';
-import 'package:popular_movies/data/mapper/movie_response_to_movie_details_mapper.dart';
-import 'package:popular_movies/data/mapper/movie_response_to_movie_entity_mapper.dart';
-import 'package:popular_movies/data/mapper/movie_response_to_movie_mapper.dart';
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
 import 'package:popular_movies/domain/model/movie_details.dart';
@@ -13,24 +10,16 @@ import '../../domain/model/movie.dart';
 
 @singleton
 class MovieDataStoreFactory {
-  final MovieEntityToMovieMapper _movieEntityToMovieMapper;
-  final MovieResponseToMovieEntityMapper _movieResponseToMovieEntityMapper;
-  final MovieEntityToMovieDetailsMapper _movieEntityToMovieDetailsMapper;
+  final MovieMapper _movieMapper;
   final MovieLocalDataSource _movieLocalDataSource;
   final MovieRemoteDataSource _movieRemoteDataSource;
   final ConnectivityService connectivityService;
-  final MovieResponseToMovieMapper _movieResponseToMovieMapper;
-  final MovieResponseToMovieDetailsMapper _movieResponseToMovieDetailsMapper;
 
   MovieDataStoreFactory(
-    this._movieEntityToMovieMapper,
-    this._movieResponseToMovieEntityMapper,
-    this._movieEntityToMovieDetailsMapper,
+    this._movieMapper,
     this._movieLocalDataSource,
     this._movieRemoteDataSource,
     this.connectivityService,
-    this._movieResponseToMovieMapper,
-    this._movieResponseToMovieDetailsMapper,
   );
 
   Future<MovieDetails> getMovieDetails(int id) async {
@@ -40,9 +29,9 @@ class MovieDataStoreFactory {
     final cacheMovie = await _movieLocalDataSource.movieDetails(id);
     if (cacheMovie == null) {
       final movie = await _movieRemoteDataSource.getMovieDetails(id);
-      return _movieResponseToMovieDetailsMapper.fromModel(movie);
+      return _movieMapper.movieResponseToMovieDetails(movie);
     } else {
-      return _movieEntityToMovieDetailsMapper.fromModel(cacheMovie);
+      return _movieMapper.movieEntityToMovieDetails(cacheMovie);
     }
   }
 
@@ -52,11 +41,11 @@ class MovieDataStoreFactory {
     */
     if (await connectivityService.checkInternetConnection()) {
       final movies = await _movieRemoteDataSource.getMovies();
-      _movieLocalDataSource.saveMovies(movies.map((e) => _movieResponseToMovieEntityMapper.fromModel(e)).toList());
-      return movies.map((e) => _movieResponseToMovieMapper.fromModel(e)).toList();
+      _movieLocalDataSource.saveMovies(movies.map((e) => _movieMapper.movieResponseToMovieEntity(e)).toList());
+      return movies.maptoList((e) => _movieMapper.movieResponseToMovie(e));
     } else {
       final cacheMovies = await _movieLocalDataSource.getMovies();
-      return cacheMovies.map((movieEntity) => _movieEntityToMovieMapper.fromModel(movieEntity)).toList();
+      return cacheMovies.maptoList((movieEntity) => _movieMapper.movieEntityToMovie(movieEntity));
     }
   }
 }

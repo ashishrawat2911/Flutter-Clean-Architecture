@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:popular_movies/data/source/remote/model/video_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 import '../model/movie_list_response_model.dart';
@@ -15,4 +16,7 @@ abstract class MovieApiService {
 
   @GET("movie/{movie_id}")
   Future<MovieResponseModel> getMovieDetails(@Path("movie_id") int id);
+
+  @GET("movie/{id}/videos")
+  Future<VideosResponse> getMovieVideos(@Path("id") int movieId);
 }
