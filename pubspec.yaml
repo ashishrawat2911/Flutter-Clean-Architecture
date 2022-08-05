@@ -23,6 +23,7 @@ dependencies:
   cached_network_image: 3.2.1
   connectivity_plus: 2.3.6
   freezed_annotation: 1.1.0
+  faker: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
