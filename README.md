@@ -11,8 +11,8 @@
 The purpose of this repository is to follow up Clean Architecture principles by bringing them to Flutter.
 
 ### ScreenShots
-<img src="https://raw.githubusercontent.com/ashishrawat2911/Flutter-PopularMovies/master/screenshots/movies_screen.png" height = 500>
-<img src="https://raw.githubusercontent.com/ashishrawat2911/Flutter-PopularMovies/master/screenshots/movie_details.png" height = 500>
+<img src="https://raw.githubusercontent.com/ashishrawat2911/Flutter-Clean-Architecture/master/screenshots/movies_screen.png" height = 500>
+<img src="https://raw.githubusercontent.com/ashishrawat2911/Flutter-Clean-Architecture/master/screenshots/movie_details.png" height = 500>
 
 ## Created & Maintained By
 [Ashish Rawat](https://linktr.ee/ashishrawat2911)
