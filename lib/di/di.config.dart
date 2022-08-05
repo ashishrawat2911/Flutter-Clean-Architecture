@@ -48,7 +48,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.singleton<_i4.ConnectivityService>(
       _i4.ConnectivityService(get<_i3.Connectivity>()));
   gh.singleton<_i5.Dio>(networkModule.dio);
-  gh.singleton<_i6.MovieApiService>(networkModule.movieApiService);
+  gh.singleton<_i6.MovieApiService>(
+      networkModule.movieApiService(get<_i5.Dio>()));
   await gh.singletonAsync<_i7.MovieDatabase>(() => databaseModule.movieDatabase,
       preResolve: true);
   gh.lazySingleton<_i8.MovieMapper>(() => _i8.MovieMapperImpl());

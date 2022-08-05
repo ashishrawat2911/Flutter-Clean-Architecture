@@ -26,7 +26,7 @@ abstract class NetworkModule {
   Connectivity get connectivity => Connectivity();
 
   @singleton
-  MovieApiService get movieApiService {
+  MovieApiService movieApiService(Dio dio) {
     return MovieApiService(
       dio
         ..options.queryParameters = {

@@ -10,14 +10,12 @@ part of 'movie_database.dart';
 class $FloorMovieDatabase {
   /// Creates a database builder for a persistent database.
   /// Once a database is built, you should keep a reference to it and re-use it.
-  static _$MovieDatabaseBuilder databaseBuilder(String name) =>
-      _$MovieDatabaseBuilder(name);
+  static _$MovieDatabaseBuilder databaseBuilder(String name) => _$MovieDatabaseBuilder(name);
 
   /// Creates a database builder for an in memory database.
   /// Information stored in an in memory database disappears when the process is killed.
   /// Once a database is built, you should keep a reference to it and re-use it.
-  static _$MovieDatabaseBuilder inMemoryDatabaseBuilder() =>
-      _$MovieDatabaseBuilder(null);
+  static _$MovieDatabaseBuilder inMemoryDatabaseBuilder() => _$MovieDatabaseBuilder(null);
 }
 
 class _$MovieDatabaseBuilder {
@@ -43,9 +41,7 @@ class _$MovieDatabaseBuilder {
 
   /// Creates the database and initializes it.
   Future<MovieDatabase> build() async {
-    final path = name != null
-        ? await sqfliteDatabaseFactory.getDatabasePath(name!)
-        : ':memory:';
+    final path = name != null ? await sqfliteDatabaseFactory.getDatabasePath(name!) : ':memory:';
     final database = _$MovieDatabase();
     database.database = await database.open(
       path,
@@ -63,8 +59,7 @@ class _$MovieDatabase extends MovieDatabase {
 
   MovieDao? _movieDaoInstance;
 
-  Future<sqflite.Database> open(String path, List<Migration> migrations,
-      [Callback? callback]) async {
+  Future<sqflite.Database> open(String path, List<Migration> migrations, [Callback? callback]) async {
     final databaseOptions = sqflite.OpenDatabaseOptions(
       version: 1,
       onConfigure: (database) async {
@@ -75,8 +70,7 @@ class _$MovieDatabase extends MovieDatabase {
         await callback?.onOpen?.call(database);
       },
       onUpgrade: (database, startVersion, endVersion) async {
-        await MigrationAdapter.runMigrations(
-            database, startVersion, endVersion, migrations);
+        await MigrationAdapter.runMigrations(database, startVersion, endVersion, migrations);
 
         await callback?.onUpgrade?.call(database, startVersion, endVersion);
       },
@@ -146,13 +140,11 @@ class _$MovieDao extends MovieDao {
 
   @override
   Future<void> insertMovie(MovieEntity movie) async {
-    await _movieEntityInsertionAdapter.insert(
-        movie, OnConflictStrategy.replace);
+    await _movieEntityInsertionAdapter.insert(movie, OnConflictStrategy.replace);
   }
 
   @override
   Future<void> insertMovies(List<MovieEntity> movie) async {
-    await _movieEntityInsertionAdapter.insertList(
-        movie, OnConflictStrategy.replace);
+    await _movieEntityInsertionAdapter.insertList(movie, OnConflictStrategy.replace);
   }
 }

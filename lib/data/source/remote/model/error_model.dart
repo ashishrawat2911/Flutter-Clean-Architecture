@@ -8,5 +8,5 @@ class ErrorModel {
   int statusCode;
 
   ErrorModel(this.statusMessage, this.statusCode);
-  factory ErrorModel.fromJson(json)=>_$ErrorModelFromJson(json);
+  factory ErrorModel.fromJson(json) => _$ErrorModelFromJson(json);
 }

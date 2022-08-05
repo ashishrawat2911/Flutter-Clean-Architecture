@@ -17,9 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$MoviesStateTearOff {
   const _$MoviesStateTearOff();
 
-  _MoviesState call(
-      {MoviesResultState moviesResultState =
-          const MoviesResultState.loading()}) {
+  _MoviesState call({MoviesResultState moviesResultState = const MoviesResultState.loading()}) {
     return _MoviesState(
       moviesResultState: moviesResultState,
     );
@@ -34,15 +32,12 @@ mixin _$MoviesState {
   MoviesResultState get moviesResultState => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MoviesStateCopyWith<MoviesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MoviesStateCopyWith<MoviesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MoviesStateCopyWith<$Res> {
-  factory $MoviesStateCopyWith(
-          MoviesState value, $Res Function(MoviesState) then) =
-      _$MoviesStateCopyWithImpl<$Res>;
+  factory $MoviesStateCopyWith(MoviesState value, $Res Function(MoviesState) then) = _$MoviesStateCopyWithImpl<$Res>;
   $Res call({MoviesResultState moviesResultState});
 
   $MoviesResultStateCopyWith<$Res> get moviesResultState;
@@ -77,10 +72,8 @@ class _$MoviesStateCopyWithImpl<$Res> implements $MoviesStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$MoviesStateCopyWith<$Res>
-    implements $MoviesStateCopyWith<$Res> {
-  factory _$MoviesStateCopyWith(
-          _MoviesState value, $Res Function(_MoviesState) then) =
+abstract class _$MoviesStateCopyWith<$Res> implements $MoviesStateCopyWith<$Res> {
+  factory _$MoviesStateCopyWith(_MoviesState value, $Res Function(_MoviesState) then) =
       __$MoviesStateCopyWithImpl<$Res>;
   @override
   $Res call({MoviesResultState moviesResultState});
@@ -90,10 +83,8 @@ abstract class _$MoviesStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$MoviesStateCopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res>
-    implements _$MoviesStateCopyWith<$Res> {
-  __$MoviesStateCopyWithImpl(
-      _MoviesState _value, $Res Function(_MoviesState) _then)
+class __$MoviesStateCopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res> implements _$MoviesStateCopyWith<$Res> {
+  __$MoviesStateCopyWithImpl(_MoviesState _value, $Res Function(_MoviesState) _then)
       : super(_value, (v) => _then(v as _MoviesState));
 
   @override
@@ -115,8 +106,7 @@ class __$MoviesStateCopyWithImpl<$Res> extends _$MoviesStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MoviesState implements _MoviesState {
-  const _$_MoviesState(
-      {this.moviesResultState = const MoviesResultState.loading()});
+  const _$_MoviesState({this.moviesResultState = const MoviesResultState.loading()});
 
   @JsonKey()
   @override
@@ -132,30 +122,25 @@ class _$_MoviesState implements _MoviesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _MoviesState &&
-            const DeepCollectionEquality()
-                .equals(other.moviesResultState, moviesResultState));
+            const DeepCollectionEquality().equals(other.moviesResultState, moviesResultState));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(moviesResultState));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(moviesResultState));
 
   @JsonKey(ignore: true)
   @override
-  _$MoviesStateCopyWith<_MoviesState> get copyWith =>
-      __$MoviesStateCopyWithImpl<_MoviesState>(this, _$identity);
+  _$MoviesStateCopyWith<_MoviesState> get copyWith => __$MoviesStateCopyWithImpl<_MoviesState>(this, _$identity);
 }
 
 abstract class _MoviesState implements MoviesState {
-  const factory _MoviesState({MoviesResultState moviesResultState}) =
-      _$_MoviesState;
+  const factory _MoviesState({MoviesResultState moviesResultState}) = _$_MoviesState;
 
   @override
   MoviesResultState get moviesResultState;
   @override
   @JsonKey(ignore: true)
-  _$MoviesStateCopyWith<_MoviesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$MoviesStateCopyWith<_MoviesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -232,14 +217,12 @@ mixin _$MoviesResultState {
 
 /// @nodoc
 abstract class $MoviesResultStateCopyWith<$Res> {
-  factory $MoviesResultStateCopyWith(
-          MoviesResultState value, $Res Function(MoviesResultState) then) =
+  factory $MoviesResultStateCopyWith(MoviesResultState value, $Res Function(MoviesResultState) then) =
       _$MoviesResultStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MoviesResultStateCopyWithImpl<$Res>
-    implements $MoviesResultStateCopyWith<$Res> {
+class _$MoviesResultStateCopyWithImpl<$Res> implements $MoviesResultStateCopyWith<$Res> {
   _$MoviesResultStateCopyWithImpl(this._value, this._then);
 
   final MoviesResultState _value;
@@ -249,17 +232,14 @@ class _$MoviesResultStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class $MoviesLoadingCopyWith<$Res> {
-  factory $MoviesLoadingCopyWith(
-          MoviesLoading value, $Res Function(MoviesLoading) then) =
+  factory $MoviesLoadingCopyWith(MoviesLoading value, $Res Function(MoviesLoading) then) =
       _$MoviesLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$MoviesLoadingCopyWithImpl<$Res>
-    extends _$MoviesResultStateCopyWithImpl<$Res>
+class _$MoviesLoadingCopyWithImpl<$Res> extends _$MoviesResultStateCopyWithImpl<$Res>
     implements $MoviesLoadingCopyWith<$Res> {
-  _$MoviesLoadingCopyWithImpl(
-      MoviesLoading _value, $Res Function(MoviesLoading) _then)
+  _$MoviesLoadingCopyWithImpl(MoviesLoading _value, $Res Function(MoviesLoading) _then)
       : super(_value, (v) => _then(v as MoviesLoading));
 
   @override
@@ -278,8 +258,7 @@ class _$MoviesLoading implements MoviesLoading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is MoviesLoading);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is MoviesLoading);
   }
 
   @override
@@ -360,18 +339,15 @@ abstract class MoviesLoading implements MoviesResultState {
 
 /// @nodoc
 abstract class $MoviesResultCopyWith<$Res> {
-  factory $MoviesResultCopyWith(
-          MoviesResult value, $Res Function(MoviesResult) then) =
+  factory $MoviesResultCopyWith(MoviesResult value, $Res Function(MoviesResult) then) =
       _$MoviesResultCopyWithImpl<$Res>;
   $Res call({List<Movie> movies});
 }
 
 /// @nodoc
-class _$MoviesResultCopyWithImpl<$Res>
-    extends _$MoviesResultStateCopyWithImpl<$Res>
+class _$MoviesResultCopyWithImpl<$Res> extends _$MoviesResultStateCopyWithImpl<$Res>
     implements $MoviesResultCopyWith<$Res> {
-  _$MoviesResultCopyWithImpl(
-      MoviesResult _value, $Res Function(MoviesResult) _then)
+  _$MoviesResultCopyWithImpl(MoviesResult _value, $Res Function(MoviesResult) _then)
       : super(_value, (v) => _then(v as MoviesResult));
 
   @override
@@ -412,13 +388,11 @@ class _$MoviesResult implements MoviesResult {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(movies));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(movies));
 
   @JsonKey(ignore: true)
   @override
-  $MoviesResultCopyWith<MoviesResult> get copyWith =>
-      _$MoviesResultCopyWithImpl<MoviesResult>(this, _$identity);
+  $MoviesResultCopyWith<MoviesResult> get copyWith => _$MoviesResultCopyWithImpl<MoviesResult>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -494,24 +468,19 @@ abstract class MoviesResult implements MoviesResultState {
 
   List<Movie> get movies;
   @JsonKey(ignore: true)
-  $MoviesResultCopyWith<MoviesResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MoviesResultCopyWith<MoviesResult> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MoviesErrorCopyWith<$Res> {
-  factory $MoviesErrorCopyWith(
-          MoviesError value, $Res Function(MoviesError) then) =
-      _$MoviesErrorCopyWithImpl<$Res>;
+  factory $MoviesErrorCopyWith(MoviesError value, $Res Function(MoviesError) then) = _$MoviesErrorCopyWithImpl<$Res>;
   $Res call({NetworkError error});
 }
 
 /// @nodoc
-class _$MoviesErrorCopyWithImpl<$Res>
-    extends _$MoviesResultStateCopyWithImpl<$Res>
+class _$MoviesErrorCopyWithImpl<$Res> extends _$MoviesResultStateCopyWithImpl<$Res>
     implements $MoviesErrorCopyWith<$Res> {
-  _$MoviesErrorCopyWithImpl(
-      MoviesError _value, $Res Function(MoviesError) _then)
+  _$MoviesErrorCopyWithImpl(MoviesError _value, $Res Function(MoviesError) _then)
       : super(_value, (v) => _then(v as MoviesError));
 
   @override
@@ -552,13 +521,11 @@ class _$MoviesError implements MoviesError {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
-  $MoviesErrorCopyWith<MoviesError> get copyWith =>
-      _$MoviesErrorCopyWithImpl<MoviesError>(this, _$identity);
+  $MoviesErrorCopyWith<MoviesError> get copyWith => _$MoviesErrorCopyWithImpl<MoviesError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -634,6 +601,5 @@ abstract class MoviesError implements MoviesResultState {
 
   NetworkError get error;
   @JsonKey(ignore: true)
-  $MoviesErrorCopyWith<MoviesError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MoviesErrorCopyWith<MoviesError> get copyWith => throw _privateConstructorUsedError;
 }
