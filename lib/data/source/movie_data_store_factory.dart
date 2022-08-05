@@ -5,6 +5,7 @@ import 'package:popular_movies/data/mapper/movie_entity_to_movie_details_mapper.
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
 import 'package:popular_movies/domain/model/movie_details.dart';
+import 'package:popular_movies/domain/model/video.dart';
 
 import '../../domain/model/movie.dart';
 
@@ -47,5 +48,10 @@ class MovieDataStoreFactory {
       final cacheMovies = await _movieLocalDataSource.getMovies();
       return cacheMovies.mapToList((movieEntity) => _movieMapper.movieEntityToMovie(movieEntity));
     }
+  }
+
+  Future<List<Video>> getMovieVideos(int id) async {
+    final videos = await _movieRemoteDataSource.getMovieVideos(id);
+    return videos.mapToList((e) => _movieMapper.videoResponseToVideo(e));
   }
 }

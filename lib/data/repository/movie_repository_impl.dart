@@ -5,6 +5,7 @@ import 'package:popular_movies/data/source/movie_data_store_factory.dart';
 import 'package:popular_movies/data/source/remote/network_error_handler.dart';
 import 'package:popular_movies/domain/model/movie.dart';
 import 'package:popular_movies/domain/model/movie_details.dart';
+import 'package:popular_movies/domain/model/video.dart';
 import 'package:popular_movies/domain/repository/movie_repository.dart';
 
 @Injectable(as: MovieRepository)
@@ -29,6 +30,16 @@ class MovieRepositoryImpl extends MovieRepository {
     try {
       final movies = await _movieDataStoreFactory.getMovies();
       return Right(movies);
+    } catch (e) {
+      return Left(_networkErrorHandler.getNetworkError(e));
+    }
+  }
+
+  @override
+  Future<Either<NetworkError, List<Video>>> getMovieVideos(int id) async {
+    try {
+      final videos = await _movieDataStoreFactory.getMovieVideos(id);
+      return Right(videos);
     } catch (e) {
       return Left(_networkErrorHandler.getNetworkError(e));
     }

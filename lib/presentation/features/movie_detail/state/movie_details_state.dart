@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:popular_movies/core/network_error.dart';
+import 'package:popular_movies/domain/model/video.dart';
 
 import '../../../../domain/model/movie_details.dart';
 
@@ -9,6 +10,7 @@ part 'movie_details_state.freezed.dart';
 class MovieDetailState with _$MovieDetailState {
   const factory MovieDetailState({
     @Default("") String title,
+    @Default([]) List<Video> videos,
     @Default(MovieDetailResultState.loading()) MovieDetailResultState movieDetailResultState,
   }) = _MovieDetailState;
 }

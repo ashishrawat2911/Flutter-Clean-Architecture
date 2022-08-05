@@ -26,15 +26,11 @@ abstract class NetworkModule {
   Connectivity get connectivity => Connectivity();
 
   @singleton
-  @Named(Constants.apiKeyName)
-  String get apiKey => Constants.apiKey;
-
-  @singleton
   MovieApiService get movieApiService {
     return MovieApiService(
       dio
         ..options.queryParameters = {
-          Constants.apiKeyName: apiKey,
+          Constants.apiKeyName: Constants.apiKey,
         },
       Constants.apiBaseUrl,
     );

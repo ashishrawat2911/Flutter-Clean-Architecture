@@ -1,9 +1,9 @@
 class Movie {
-  int id;
-  String posterPath;
-  String title;
-  double voteAverage;
-  String overview;
+  final int id;
+  final String posterPath;
+  final String title;
+  final double voteAverage;
+  final String overview;
 
   Movie(
     this.id,

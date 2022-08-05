@@ -6,7 +6,7 @@ part 'video_response.g.dart';
 class VideosResponse {
   int id;
   @JsonKey(name: "results")
-  List<Video> videos;
+  List<VideoResponse> videos;
 
   VideosResponse(this.id, this.videos);
 
@@ -16,7 +16,7 @@ class VideosResponse {
 }
 
 @JsonSerializable()
-class Video {
+class VideoResponse {
   String id;
   @JsonKey(name: "key")
   String key;
@@ -29,9 +29,9 @@ class Video {
   @JsonKey(name: "type")
   String type;
 
-  Video(this.id, this.key, this.name, this.site, this.size, this.type);
+  VideoResponse(this.id, this.key, this.name, this.site, this.size, this.type);
 
-  factory Video.fromJson(Map<String, dynamic> json) => _$VideoFromJson(json);
+  factory VideoResponse.fromJson(Map<String, dynamic> json) => _$VideoResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$VideoToJson(this);
+  Map<String, dynamic> toJson() => _$VideoResponseToJson(this);
 }

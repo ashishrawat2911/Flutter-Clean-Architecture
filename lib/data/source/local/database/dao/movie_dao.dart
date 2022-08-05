@@ -1,5 +1,5 @@
 import 'package:floor/floor.dart';
-import 'package:popular_movies/data/source/local/model/movie_entity.dart';
+import 'package:popular_movies/data/source/local/database/model/movie_entity.dart';
 
 @dao
 abstract class MovieDao {

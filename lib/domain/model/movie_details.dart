@@ -1,8 +1,8 @@
 class MovieDetails {
-  String backdropPath;
-  String title;
-  double voteAverage;
-  String overview;
+  final String backdropPath;
+  final String title;
+  final double voteAverage;
+  final String overview;
 
   MovieDetails(
     this.backdropPath,

@@ -1,4 +1,4 @@
-import 'package:popular_movies/data/source/local/model/movie_entity.dart';
+import 'package:popular_movies/data/source/local/database/model/movie_entity.dart';
 
 abstract class MovieLocalDataSource {
   Future<List<MovieEntity>> getMovies();

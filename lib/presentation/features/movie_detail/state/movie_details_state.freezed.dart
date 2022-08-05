@@ -19,10 +19,12 @@ class _$MovieDetailStateTearOff {
 
   _MovieDetailState call(
       {String title = "",
+      List<Video> videos = const [],
       MovieDetailResultState movieDetailResultState =
           const MovieDetailResultState.loading()}) {
     return _MovieDetailState(
       title: title,
+      videos: videos,
       movieDetailResultState: movieDetailResultState,
     );
   }
@@ -34,6 +36,7 @@ const $MovieDetailState = _$MovieDetailStateTearOff();
 /// @nodoc
 mixin _$MovieDetailState {
   String get title => throw _privateConstructorUsedError;
+  List<Video> get videos => throw _privateConstructorUsedError;
   MovieDetailResultState get movieDetailResultState =>
       throw _privateConstructorUsedError;
 
@@ -47,7 +50,10 @@ abstract class $MovieDetailStateCopyWith<$Res> {
   factory $MovieDetailStateCopyWith(
           MovieDetailState value, $Res Function(MovieDetailState) then) =
       _$MovieDetailStateCopyWithImpl<$Res>;
-  $Res call({String title, MovieDetailResultState movieDetailResultState});
+  $Res call(
+      {String title,
+      List<Video> videos,
+      MovieDetailResultState movieDetailResultState});
 
   $MovieDetailResultStateCopyWith<$Res> get movieDetailResultState;
 }
@@ -64,6 +70,7 @@ class _$MovieDetailStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? videos = freezed,
     Object? movieDetailResultState = freezed,
   }) {
     return _then(_value.copyWith(
@@ -71,6 +78,10 @@ class _$MovieDetailStateCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      videos: videos == freezed
+          ? _value.videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<Video>,
       movieDetailResultState: movieDetailResultState == freezed
           ? _value.movieDetailResultState
           : movieDetailResultState // ignore: cast_nullable_to_non_nullable
@@ -94,7 +105,10 @@ abstract class _$MovieDetailStateCopyWith<$Res>
           _MovieDetailState value, $Res Function(_MovieDetailState) then) =
       __$MovieDetailStateCopyWithImpl<$Res>;
   @override
-  $Res call({String title, MovieDetailResultState movieDetailResultState});
+  $Res call(
+      {String title,
+      List<Video> videos,
+      MovieDetailResultState movieDetailResultState});
 
   @override
   $MovieDetailResultStateCopyWith<$Res> get movieDetailResultState;
@@ -114,6 +128,7 @@ class __$MovieDetailStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? videos = freezed,
     Object? movieDetailResultState = freezed,
   }) {
     return _then(_MovieDetailState(
@@ -121,6 +136,10 @@ class __$MovieDetailStateCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      videos: videos == freezed
+          ? _value.videos
+          : videos // ignore: cast_nullable_to_non_nullable
+              as List<Video>,
       movieDetailResultState: movieDetailResultState == freezed
           ? _value.movieDetailResultState
           : movieDetailResultState // ignore: cast_nullable_to_non_nullable
@@ -134,6 +153,7 @@ class __$MovieDetailStateCopyWithImpl<$Res>
 class _$_MovieDetailState implements _MovieDetailState {
   const _$_MovieDetailState(
       {this.title = "",
+      this.videos = const [],
       this.movieDetailResultState = const MovieDetailResultState.loading()});
 
   @JsonKey()
@@ -141,11 +161,14 @@ class _$_MovieDetailState implements _MovieDetailState {
   final String title;
   @JsonKey()
   @override
+  final List<Video> videos;
+  @JsonKey()
+  @override
   final MovieDetailResultState movieDetailResultState;
 
   @override
   String toString() {
-    return 'MovieDetailState(title: $title, movieDetailResultState: $movieDetailResultState)';
+    return 'MovieDetailState(title: $title, videos: $videos, movieDetailResultState: $movieDetailResultState)';
   }
 
   @override
@@ -154,6 +177,7 @@ class _$_MovieDetailState implements _MovieDetailState {
         (other.runtimeType == runtimeType &&
             other is _MovieDetailState &&
             const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.videos, videos) &&
             const DeepCollectionEquality()
                 .equals(other.movieDetailResultState, movieDetailResultState));
   }
@@ -162,6 +186,7 @@ class _$_MovieDetailState implements _MovieDetailState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(videos),
       const DeepCollectionEquality().hash(movieDetailResultState));
 
   @JsonKey(ignore: true)
@@ -173,10 +198,13 @@ class _$_MovieDetailState implements _MovieDetailState {
 abstract class _MovieDetailState implements MovieDetailState {
   const factory _MovieDetailState(
       {String title,
+      List<Video> videos,
       MovieDetailResultState movieDetailResultState}) = _$_MovieDetailState;
 
   @override
   String get title;
+  @override
+  List<Video> get videos;
   @override
   MovieDetailResultState get movieDetailResultState;
   @override

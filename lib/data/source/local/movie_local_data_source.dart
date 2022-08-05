@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
-import 'package:popular_movies/data/source/local/movie_dao.dart';
+import 'package:popular_movies/data/source/local/database/dao/movie_dao.dart';
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 
-import 'model/movie_entity.dart';
+import 'database/model/movie_entity.dart';
 
 @Injectable(as: MovieLocalDataSource)
 class MovieLocalDataSourceImpl extends MovieLocalDataSource {

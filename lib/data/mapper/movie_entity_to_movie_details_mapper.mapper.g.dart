@@ -11,37 +11,58 @@ class MovieMapperImpl extends MovieMapper {
   MovieMapperImpl() : super();
 
   @override
-  MovieDetails movieEntityToMovieDetails(MovieEntity model) {
-    final moviedetails = MovieDetails(
-        model.backdropPath, model.title, model.voteAverage, model.overview);
+  MovieDetails movieEntityToMovieDetails(MovieEntity movieEntity) {
+    final moviedetails = MovieDetails(movieEntity.backdropPath,
+        movieEntity.title, movieEntity.voteAverage, movieEntity.overview);
     return moviedetails;
   }
 
   @override
-  Movie movieEntityToMovie(MovieEntity model) {
-    final movie = Movie(model.id, model.posterPath, model.title,
-        model.voteAverage, model.overview);
+  Movie movieEntityToMovie(MovieEntity movieEntity) {
+    final movie = Movie(movieEntity.id, movieEntity.posterPath,
+        movieEntity.title, movieEntity.voteAverage, movieEntity.overview);
     return movie;
   }
 
   @override
-  MovieDetails movieResponseToMovieDetails(MovieResponseModel model) {
+  MovieDetails movieResponseToMovieDetails(
+      MovieResponseModel movieResponseModel) {
     final moviedetails = MovieDetails(
-        model.backdropPath, model.title, model.voteAverage, model.overview);
+        movieResponseModel.backdropPath,
+        movieResponseModel.title,
+        movieResponseModel.voteAverage,
+        movieResponseModel.overview);
     return moviedetails;
   }
 
   @override
-  MovieEntity movieResponseToMovieEntity(MovieResponseModel model) {
-    final movieentity = MovieEntity(model.id, model.posterPath,
-        model.backdropPath, model.title, model.voteAverage, model.overview);
+  MovieEntity movieResponseToMovieEntity(
+      MovieResponseModel movieResponseModel) {
+    final movieentity = MovieEntity(
+        movieResponseModel.id,
+        movieResponseModel.posterPath,
+        movieResponseModel.backdropPath,
+        movieResponseModel.title,
+        movieResponseModel.voteAverage,
+        movieResponseModel.overview);
     return movieentity;
   }
 
   @override
-  Movie movieResponseToMovie(MovieResponseModel model) {
-    final movie = Movie(model.id, model.posterPath, model.title,
-        model.voteAverage, model.overview);
+  Movie movieResponseToMovie(MovieResponseModel movieResponseModel) {
+    final movie = Movie(
+        movieResponseModel.id,
+        movieResponseModel.posterPath,
+        movieResponseModel.title,
+        movieResponseModel.voteAverage,
+        movieResponseModel.overview);
     return movie;
+  }
+
+  @override
+  Video videoResponseToVideo(VideoResponse videoResponse) {
+    final video = Video(videoResponse.id, videoResponse.key, videoResponse.name,
+        videoResponse.site, videoResponse.size, videoResponse.type);
+    return video;
   }
 }
