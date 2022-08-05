@@ -15,8 +15,7 @@ class MovieRemoteDataSourceImpl extends MovieRemoteDataSource {
 
   @override
   Future<MovieResponseModel> getMovieDetails(int id) async {
-    final movie = await _movieApiService.getMovieDetails(id);
-    return movie;
+    return _movieApiService.getMovieDetails(id);
   }
 
   @override

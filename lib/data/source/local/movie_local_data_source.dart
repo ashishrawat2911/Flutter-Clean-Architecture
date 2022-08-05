@@ -14,15 +14,12 @@ class MovieLocalDataSourceImpl extends MovieLocalDataSource {
 
   @override
   Future<List<MovieEntity>> getMovies() async {
-    final movies = await _movieDao.findAllMovies();
-    return movies;
+    return _movieDao.findAllMovies();
   }
 
   @override
   Future<MovieEntity?> movieDetails(int id) async {
-    final movie = await _movieDao.findMovieById(id);
-    if (movie == null) return null;
-    return movie;
+    return _movieDao.findMovieById(id);
   }
 
   @override

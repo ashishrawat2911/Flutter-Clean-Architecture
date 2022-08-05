@@ -13,7 +13,6 @@ import 'movie_repository_impl_test.mocks.dart';
 @GenerateMocks([MovieRepositoryImpl])
 void main() {
   MockMovieRepositoryImpl mockMovieRepository = MockMovieRepositoryImpl();
-
   group('getPopularMovies function testing', () {
     test('success test', () async {
       const mockValue = Right<NetworkError, List<Movie>>([]);
