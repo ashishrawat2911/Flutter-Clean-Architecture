@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
 import 'package:popular_movies/core/extention/list_extentions.dart';
 import 'package:popular_movies/core/services/connectivity_service.dart';
-import 'package:popular_movies/data/mapper/movie_entity_to_movie_details_mapper.dart';
+import 'package:popular_movies/data/mapper/movie_domain_mapper.dart';
 import 'package:popular_movies/data/source/movie_local_data_source.dart';
 import 'package:popular_movies/data/source/movie_remote_data_source.dart';
 import 'package:popular_movies/domain/model/movie_details.dart';
@@ -11,7 +11,7 @@ import '../../domain/model/movie.dart';
 
 @singleton
 class MovieDataStoreFactory {
-  final MovieMapper _movieMapper;
+  final MovieDomainMapper _movieMapper;
   final MovieLocalDataSource _movieLocalDataSource;
   final MovieRemoteDataSource _movieRemoteDataSource;
   final ConnectivityService connectivityService;

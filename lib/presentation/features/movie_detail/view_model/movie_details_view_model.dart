@@ -18,7 +18,6 @@ class MoviesDetailsViewModel extends Cubit<MovieDetailState> {
   }
 
   void getMovieDetails(int id) async {
-    getVideos(id);
     final result = await _getMovieDetailUseCase.execute(id);
     result.fold((l) {
       emit(state.copyWith(movieDetailResultState: MovieDetailResultState.error(l)));

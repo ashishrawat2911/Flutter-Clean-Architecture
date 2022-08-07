@@ -11,7 +11,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../core/services/connectivity_service.dart' as _i4;
-import '../data/mapper/movie_entity_to_movie_details_mapper.dart' as _i8;
+import '../data/mapper/movie_domain_mapper.dart' as _i8;
 import '../data/repository/movie_repository_impl.dart' as _i17;
 import '../data/source/local/database/dao/movie_dao.dart' as _i12;
 import '../data/source/local/database/db/movie_database.dart' as _i7;
@@ -52,7 +52,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       networkModule.movieApiService(get<_i5.Dio>()));
   await gh.singletonAsync<_i7.MovieDatabase>(() => databaseModule.movieDatabase,
       preResolve: true);
-  gh.lazySingleton<_i8.MovieMapper>(() => _i8.MovieMapperImpl());
+  gh.lazySingleton<_i8.MovieDomainMapper>(() => _i8.MovieDomainMapperImpl());
   gh.factory<_i9.MovieRemoteDataSource>(
       () => _i10.MovieRemoteDataSourceImpl(get<_i6.MovieApiService>()));
   gh.singleton<_i11.NetworkErrorHandler>(_i11.NetworkErrorHandler());
@@ -61,7 +61,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<_i13.MovieLocalDataSource>(
       () => _i14.MovieLocalDataSourceImpl(get<_i12.MovieDao>()));
   gh.singleton<_i15.MovieDataStoreFactory>(_i15.MovieDataStoreFactory(
-      get<_i8.MovieMapper>(),
+      get<_i8.MovieDomainMapper>(),
       get<_i13.MovieLocalDataSource>(),
       get<_i9.MovieRemoteDataSource>(),
       get<_i4.ConnectivityService>()));

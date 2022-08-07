@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'movie_entity_to_movie_details_mapper.dart';
+part of 'movie_domain_mapper.dart';
 
 // **************************************************************************
 // MapperGenerator
 // **************************************************************************
 
-@LazySingleton(as: MovieMapper)
-class MovieMapperImpl extends MovieMapper {
-  MovieMapperImpl() : super();
+@LazySingleton(as: MovieDomainMapper)
+class MovieDomainMapperImpl extends MovieDomainMapper {
+  MovieDomainMapperImpl() : super();
 
   @override
   MovieDetails movieEntityToMovieDetails(MovieEntity movieEntity) {
